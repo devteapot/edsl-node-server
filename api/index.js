@@ -7,7 +7,7 @@ Array.prototype.randomElement = function () {
 const getStatusCodesInRange = (from, length) =>
   [...Array(length).keys()].map(offset => from + offset)
 
-app.get('/api/1xx', (_, res) => {
+app.post('/api/1xx', (_, res) => {
   res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
   res.setHeader('Content-Type', 'text/html');
   res.status(getStatusCodesInRange(100, 2).randomElement()).end();
