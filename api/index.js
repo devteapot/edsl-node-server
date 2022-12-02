@@ -9,6 +9,7 @@ const getStatusCodesInRange = (from, length) =>
 
 app.get('/api/1xx', (_, res) => {
   res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
+  res.setHeader('Content-Type', 'text/html');
   res.status(getStatusCodesInRange(100, 2).randomElement()).end();
 });
 
