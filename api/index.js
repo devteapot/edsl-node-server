@@ -1,7 +1,7 @@
 const app = require('express')();
 
 Array.prototype.randomElement = function () {
-  return this[Math.floor((Math.randomElement() * this.length))];
+  return this[Math.floor((Math.random() * this.length))];
 }
 
 const getStatusCodesInRange = (from, length) =>
